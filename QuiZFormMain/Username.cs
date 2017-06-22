@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace QuiZFormMain
 {
-    public partial class Form1 : Form
+    public partial class Username : Form
     {
-        public Form1()
+        public Username()
         {
             InitializeComponent();
         }
+
     }
 }
