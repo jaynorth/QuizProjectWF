@@ -1,6 +1,6 @@
 ﻿namespace QuiZFormMain
 {
-    partial class Username
+    partial class StartForm
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
