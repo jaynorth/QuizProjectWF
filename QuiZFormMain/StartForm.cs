@@ -25,7 +25,9 @@ namespace QuiZFormMain
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+   
+
+        private void StartForm_Load(object sender, EventArgs e)
         {
             comboBox2.Items.Clear();
             con.Open();
@@ -41,6 +43,7 @@ namespace QuiZFormMain
             {
                 comboBox2.Items.Add(dr["Name"].ToString());
             }
+
         }
     }
 }
