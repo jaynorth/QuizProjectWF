@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuiZFormMain", "QuiZFormMain\QuiZFormMain.csproj", "{F4434D59-2B59-47C6-9687-C862ACB74094}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{4AC61F0D-DFCD-4623-A567-3C18CD4C8E26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F4434D59-2B59-47C6-9687-C862ACB74094}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4434D59-2B59-47C6-9687-C862ACB74094}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4434D59-2B59-47C6-9687-C862ACB74094}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AC61F0D-DFCD-4623-A567-3C18CD4C8E26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AC61F0D-DFCD-4623-A567-3C18CD4C8E26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AC61F0D-DFCD-4623-A567-3C18CD4C8E26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AC61F0D-DFCD-4623-A567-3C18CD4C8E26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

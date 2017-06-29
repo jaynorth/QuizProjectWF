@@ -47,9 +47,24 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,6 +76,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\Question.cs">
+      <DependentUpon>QuizModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Question_addon.cs" />
+    <Compile Include="Entity\Question_choices.cs">
+      <DependentUpon>QuizModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Question_choices_addon.cs" />
+    <Compile Include="Entity\QuizModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuizModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\QuizModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuizModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\QuizModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuizModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Subject.cs">
+      <DependentUpon>QuizModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\User.cs">
+      <DependentUpon>QuizModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\User_Questions_answer.cs">
+      <DependentUpon>QuizModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model\Subject.cs" />
+    <Compile Include="model\User.cs" />
+    <Compile Include="Viewmodel\QuizPageViewModel.cs" />
+    <Compile Include="view\QuizPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\QuizPage.Designer.cs">
+      <DependentUpon>QuizPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="StartForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +126,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Viewmodel\StartFormViewModel.cs" />
+    <EmbeddedResource Include="view\QuizPage.resx">
+      <DependentUpon>QuizPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -82,6 +141,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="Entity\QuizModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuizModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entity\QuizModel.edmx.diagram">
+      <DependentUpon>QuizModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -96,6 +163,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Entity\QuizModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>QuizModel.Context.cs</LastGenOutput>
+      <DependentUpon>QuizModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Entity\QuizModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuizModel.edmx</DependentUpon>
+      <LastGenOutput>QuizModel.cs</LastGenOutput>
+    </Content>
     <Content Include="QuizzDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -115,6 +192,10 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
